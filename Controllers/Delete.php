@@ -13,9 +13,14 @@
 
 
       public function Delete_item(){
+        //   check id project ID is set
+        
                  if(isset($_GET['id'])){
+
                     if($this->Delete($_GET['id'])){
+
                         echo json_encode(['message' => 'Poject Deleted']);
+
                     }else{
                         echo json_encode(['message' => 'Poject Not Deleted']);
                     }
@@ -26,4 +31,6 @@
       }
   }
 
+$s = new Delete;
+$d = $s->Delete_item();
 

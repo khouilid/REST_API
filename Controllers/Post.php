@@ -12,18 +12,30 @@ include_once '../Models/CRUD.php';
 
 class Post Extends CRUD{
 
-    public function __construct($name, $github, $website,$description){
+    public function Insert(){
+        // check if all data is setted
 
-        $result = $this->Insert($name, $github, $website,$description);
+        if(isset($_GET['Name'],$_GET['Github'],$_GET['Website'],$_GET['Desc'])){
 
-        if($result){
-            echo 'Done';
+            $result = $this->Insert_item($_GET['Name'],$_GET['Github'],$_GET['Website'],$_GET['Desc']);
+
+            if($result){
+                
+                echo json_encode(['message' => 'Done']);
+
+            }else{
+                
+                echo json_encode(['message' => "Can't insert this data"]);
+            }
         }else{
-            echo "Can't insert now";
+                
+            echo json_encode(['message' => "you should include all date in the URL (Name/Github/Website/Dec)"]);
         }
 
     }
 }
 
+$d = new Post();
+$s = $d->Insert();
 
 

@@ -34,3 +34,6 @@ class Read Extends CRUD{
 }
 
 
+$data = new Read;
+$data = $data->get_All();
+

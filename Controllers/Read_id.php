@@ -48,5 +48,6 @@ class Read_id Extends CRUD{
     }
 }
 
-
+$data = new Read_id;
+$data = $data->Get_single();
 

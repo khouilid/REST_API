@@ -27,9 +27,13 @@ Abstract class CRUD Extends Connection {
         }
     }
 //     this method for insert new project 
-    public function Insert($name, $github, $website,$description){
+    public function Insert_item($name, $github, $website,$description){
 
-        $sql = 'INSERT INTO `projects`(`Project_name`, `GitHub_link`, `website_link`, `Description`) VALUES (?,?,?,?)';
+        $sql = 'INSERT INTO 
+        `projects`(`Project_name`, `GitHub_link`,
+         `website_link`, `Description`) VALUES (?,?,?,?)';
+
+
         $stmt = $this->connection()->prepare($sql);
 
         return $stmt->execute([$name, $github, $website,$description]);
@@ -44,6 +48,48 @@ Abstract class CRUD Extends Connection {
         $stmt = $this->connection()->prepare($sql);
         
         return $stmt->execute([$id]);
+    }
+
+
+
+
+    // this method Update info in DB
+
+    public function Update_item($id, $info, $col){
+        // check which data gonna update 
+
+        if($col == 'Name'){
+
+            $sql = 'UPDATE `projects` SET  
+            `Project_name`= ? WHERE `ID` = ?';
+        }
+        
+        elseif($col == 'Github'){
+
+            $sql = 'UPDATE `projects` SET  
+            `GitHub_link`= ?  WHERE `ID` = ?';
+        }
+
+
+        elseif($col == 'Website'){
+
+            $sql = 'UPDATE `projects` SET  
+            `website_link`= ?  WHERE `ID` = ?';
+        }
+
+        elseif($col == 'Desc'){
+
+            $sql = 'UPDATE `projects` SET  
+            `Description`= ?  WHERE `ID` = ?';
+        }
+
+
+        $stmt = $this->connection()->prepare($sql);
+
+        return $stmt->execute([$info , $id]);
+
+
+
     }
 
 
