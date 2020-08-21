@@ -18,7 +18,7 @@ Should include all in the URL (Name/Github/Website/Dec)
 
 
 
--Delete items (need 'id' variable on the url ):
+-Delete items:
 
 http://localhost/REST_API/Controllers/Delete.php
 Should include ID in the URL (like: id= 1)
