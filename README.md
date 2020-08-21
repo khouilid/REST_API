@@ -1,29 +1,37 @@
 
-- get single project by it's ID
+- get single project by it's ID:
+
+Should include ID in the URL (like: id= 1)
+http://localhost/REST_API/Controllers/Read_id.php
 
 
 
-- get all the project 
+- get all the project:
+
+http://localhost/REST_API/Controllers/Read.php
+
+
+- insert data:
+
+http://localhost/REST_API/Controllers/Post.php
+Should include all in the URL (Name/Github/Website/Dec)
 
 
 
-- insert data :
+-Delete items (need 'id' variable on the url ):
 
-
-
-
--Delete items (need 'id' variable on the url )
+http://localhost/REST_API/Controllers/Delete.php
+Should include ID in the URL (like: id= 1)
 
 
 
 
 - update item 
 
-   - need 'id' variable on the url AND u have to give the new info 
-   - if you need to update the name ou should sned the var(name ) in the url
-   - if you need to update the Github link ou should sned the var(Github) in the url
-   - if you need to update the Website link ou should sned the var(Website ) in the url
-   - if you need to update the Description ou should sned the var(Desc ) in the url
+http://localhost/REST_API/Controllers/Update.php
+Should include ID in the URL (like: id= 1)
+And the data you want to update (name/Github/Website/Dec)
+
 
 
 
