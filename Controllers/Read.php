@@ -1,12 +1,16 @@
 <?php
-include_once '../Models/Gett.model.php';
 
-class Read {
+header('Access-Control-Allow-Origin: *');
+header('Content-Type: application/json');
+
+include_once '../Models/CRUD.php';
+
+class Read Extends CRUD{
    public $Data = [];
   public function get_All(){
-        // createnew object and call the method get_project that will return all the project inside an Array
-        $project = new Gett;
-        $project_All = $project->get_project();
+        // create new object and call the method get_project that will return all the project inside an Array
+      
+        $project_All = $this->get_project();
 
         if (sizeof($project_All) > 0 ){
                 // Rename the data 

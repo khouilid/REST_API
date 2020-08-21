@@ -1,11 +1,12 @@
 <?php
+ header('Access-Control-Allow-Origin: *');
+ header('Content-Type: application/json');
 
-include_once '../Models/Gett.model.php';
+ include_once '../Models/CRUD.php';
 
-class Read_id Extends Gett{
+class Read_id Extends CRUD{
 
     private function get_pro($id){
-
 
         $data = $this->find_project($id);
         // check  data if it existe or not
@@ -45,9 +46,7 @@ class Read_id Extends Gett{
 
         }
     }
-
-
-
-
 }
+
+
 

@@ -3,7 +3,7 @@ include_once '../Config/Connection.php';
 
 
 
-class Gett Extends Connection {
+Abstract class CRUD Extends Connection {
     // get all the project from DB 
     public function get_project(){
         $sql = 'SELECT * FROM `projects`';
@@ -26,6 +26,29 @@ class Gett Extends Connection {
             return 'No Data Found';
         }
     }
+//     this method for insert new project 
+    public function Insert($name, $github, $website,$description){
+
+        $sql = 'INSERT INTO `projects`(`Project_name`, `GitHub_link`, `website_link`, `Description`) VALUES (?,?,?,?)';
+        $stmt = $this->connection()->prepare($sql);
+
+        return $stmt->execute([$name, $github, $website,$description]);
+       
+    }
+
+
+    // this method for delete poject from DB 
+    public function Delete($id){
+        $sql = 'DELETE FROM `projects` WHERE ID = ?';
+
+        $stmt = $this->connection()->prepare($sql);
+        
+        return $stmt->execute([$id]);
+    }
+
+
+
+
 }
 
 
