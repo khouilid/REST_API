@@ -2,8 +2,8 @@
 
 Abstract class Connection {
     private $host = 'localhost';
-    private $user = 'Admin';
-    private $password = 'TxEXbZvboEYVYRyy';
+    private $user = 'root';
+    private $password = '';
     private $DB_name = 'portfolio_db';
 
 
