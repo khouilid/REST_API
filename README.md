@@ -12,8 +12,10 @@ $data = $data->get_All();
 
 
 - insert data :
+Should include all date in the URL (Name/Github/Website/Dec)
 
-$d = new Post($name, $github, $website,$description);
+$d = new Post();
+$s = $d->Insert();
 
 
 -Delete items (need 'id' variable on the url )
