@@ -1,3 +1,13 @@
+# PHP REST API
+
+> This is a simple PHP REST API from scratch with no framework.
+
+## Quick Start
+
+Import the DB.sql file, change the params in the config/Database.php file to your own
+
+
+
 
 - get single project by it's ID:
 
